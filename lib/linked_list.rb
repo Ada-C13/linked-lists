@@ -25,11 +25,25 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def length
+
+    if @head == nil 
+      return 0
+    end 
+
    current = @head
+   next_node = @head.next
    count = 0
-   while current != nil 
+
+   while next_node != nil 
     count += 1
-    current = current.next
+    current = next_node
+    next_node = next_node.next
+    count += 1
+   end 
+
+   if current != nil 
+    return 1
+
    end 
 
    return count
@@ -44,29 +58,31 @@ class LinkedList
     end 
 
     current = @head 
+    next_node = @head.next
 
-    while current != nil 
-      current = current.next
+    while next_node != nil 
+      current = next_node
+      next_node = next_node.next
     end 
-
+    
     current.next = Node.new(data)
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_last
+
     if @head == nil 
-      return nil
-    end 
-
-    current = @head 
-
-    while current != nil 
-      current = current.next
-      if current == nil 
-        return current
-      end 
+      return nil 
     end
+    current = @head 
+    next_node = @head.next
+    while next_node != nil
+      current = next_node;
+      next_node = next_node.next; 
+    end 
+  
+    return current.data;
   end
 
   # Time complexity - ?
