@@ -58,6 +58,7 @@ describe LinkedList do
 
     it "will return the length for nonempty lists" do
       count = 0
+
       while count < 5
         @list.add_first(count)
         count += 1
