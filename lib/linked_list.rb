@@ -11,10 +11,9 @@ class LinkedList
   # Space complexity - O(1)
   def add_first(data)
 
-    return Node.new(data, new_node)
-    # new_node = Node.new(data) # create a new node
-    # new_node.next = @head # assign the new node's NEXT to the @head
-    # @head = new_node # assign the head position to the new node
+    new_node = Node.new(data) # create a new node
+    new_node.next = @head # assign the new node's NEXT to the @head
+    @head = new_node # assign the head position to the new node
   end
 
   # Time complexity - O(1) - always retrieving the first element, no need to traverse
@@ -47,7 +46,7 @@ class LinkedList
     new_node = Node.new(data)
 
     if @head.nil?
-      add_first(value_to_add)
+      add_first(data)
       return # THIS RETURN IS VERY IMPORTANT
     end
 
