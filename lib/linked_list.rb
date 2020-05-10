@@ -10,7 +10,7 @@ class LinkedList
   # Time complexity - O(1)
   # Space complexity - O(1)
   def add_first(data)
-    @head = Node.new(data, @head)
+    @head = Node.new(data, @head) #have to pass in the new @head value since it changed 
     return @head.data
   end
 
@@ -48,7 +48,7 @@ class LinkedList
       add_first(data)
       return
     else
-      until current.next.nil?
+      until current.next.nil? 
         current = current.next
       end
       current.next = Node.new(data)
