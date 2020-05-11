@@ -37,13 +37,36 @@ class LinkedList
   # Time complexity - O(n)
   # Space complexity - O(n)
   def add_last(data)
+    new_node = Node.new(data)
 
+    if self.length == 0
+      @head = new_node
+      return @head.data
+    end
+
+    current_node = @head
+    previous_node = current_node
+    while current_node
+      previous_node = current_node
+      current_node = current_node.next
+    end
+
+    previous_node.next = new_node
+    return new_node.data
   end
 
   # Time complexity - O(n)
   # Space complexity - O(1)
   def get_last
+    length = self.length
 
+    i = 0
+    current_node = @head
+    until i == length - 1
+      current_node = current_node.next
+      i += 1
+    end
+    return current_node.data
   end
 
   # Time complexity - O(n)
@@ -59,4 +82,4 @@ while count < 5
   @list.add_first(count)
   count += 1
 end
-@list.length
+@list.add_last(0)
