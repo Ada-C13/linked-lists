@@ -83,11 +83,3 @@ class LinkedList
     return current_node.data
   end
 end
-
-# @list = LinkedList.new
-# count = 0
-# while count < 5
-#   @list.add_first(count)
-#   count += 1
-# end
-# @list.add_last(0)
