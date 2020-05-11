@@ -25,7 +25,13 @@ class LinkedList
   # Time complexity - O(n)
   # Space complexity - O(1)
   def length
-    
+    count = 0
+    current_node = @head
+    while current_node
+      count += 1
+      current_node = current_node.next
+    end
+    return count
   end
 
   # Time complexity - O(n)
@@ -46,3 +52,11 @@ class LinkedList
 
   end
 end
+
+@list = LinkedList.new
+count = 0
+while count < 5
+  @list.add_first(count)
+  count += 1
+end
+@list.length
