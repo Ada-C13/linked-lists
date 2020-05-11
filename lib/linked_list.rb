@@ -22,7 +22,16 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def length
-    return 0
+    return 0 if @head.nil?
+    
+    current = @head
+    count = 0 
+    until current.nil?
+      count += 1
+      current = current.next
+    end
+
+    return count
   end
 
   # Time complexity - ?
