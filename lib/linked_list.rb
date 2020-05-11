@@ -72,14 +72,22 @@ class LinkedList
   # Time complexity - O(n)
   # Space complexity - O(1)
   def get_at_index(index)
-
+    return nil if index > self.length
+    current_node = @head
+    
+    i = 0
+    until i == index
+      current_node = current_node.next
+      i += 1
+    end
+    return current_node.data
   end
 end
 
-@list = LinkedList.new
-count = 0
-while count < 5
-  @list.add_first(count)
-  count += 1
-end
-@list.add_last(0)
+# @list = LinkedList.new
+# count = 0
+# while count < 5
+#   @list.add_first(count)
+#   count += 1
+# end
+# @list.add_last(0)
