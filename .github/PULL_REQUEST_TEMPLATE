@@ -2,7 +2,7 @@
 
 | Question 	| Response 	|
 |---	|---	|
-| 1.  What advantages does a LinkedList have over an Array? 	|  	|
-| 2.  When is an Array more advantageous? 	|  	|
+| 1.  What advantages does a LinkedList have over an Array? 	|  Linkedlist have dynamic sizing (not fixed like an array), efficient memory usage (unlike array where when you pop something out, it's an empty memory space), and quicker insert and deleting.	|
+| 2.  When is an Array more advantageous? 	| When you know how much memory you'll need and when you need to quickly find something you can use the index. 	|
 | 3.  When is an Array more advantageous? 	|  	|
 
