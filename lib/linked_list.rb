@@ -88,6 +88,17 @@ class LinkedList
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
+    return nil if @head.nil?
+   
+    pointer = @head
+    count = 0
+    until pointer.next.nil? || count == index
+      pointer = pointer.next
+      count += 1
+    end
 
+    return pointer.data
   end
+
 end
+
