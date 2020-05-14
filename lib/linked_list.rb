@@ -27,8 +27,8 @@ class LinkedList
 
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - o(1)
+  # Space complexity - o(1)
   def get_first
     
     return nil if @head.nil?
@@ -36,43 +36,58 @@ class LinkedList
     
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - o(n)-->it Traveses all the list to get the count.
+  # Space complexity - o(1)
   def length
-    return 0
-  end
+    return 0 if @head.nil?
 
-  # Time complexity - ?
-  # Space complexity - ?
-  def add_last(data)
-
-    if @head.nil?
-      add_first(data, @head)
-      return
-    end
-
+    count = 0 
     current = @head
-
-    # Until we reach the last node
-    until current.next.nil?
+    until current.nil?
+      count += 1
+      # Move the pointer to the next, otherwise will be infinite loop.
       current = current.next
     end
 
-    current.next = new_node
+    return count
   end
 
-  # Time complexity - ?
-  # Space complexity - ?
+  # Time complexity - o(n)--> It traveses all the list to put the data at the end.
+  # Space complexity - o(1)
+  def add_last(data)
+    new_node = Node.new(data)
+    # Using add_first function to add new node in case the list is empty.
+    if @head.nil?
+      add_first(new_node.data)
+      return 
+    end
+
+    pointer = @head
+    # Until we reach the last node
+    until pointer.next.nil?
+      # Move the pointer to the next.
+      pointer = pointer.next
+    end
+
+    pointer.next = new_node
+    new_node.next = nil
+  end
+
+  # Time complexity - o(1)-->It traveses all the list to get last one. 
+  # Space complexity - o(1)
   def get_last
+    return nil if @head.nil?  
+    pointer = @head
+
+    until pointer.next.nil?
+      pointer = pointer.next
+    end
+    return pointer.data
   end
 
   # Time complexity - ?
   # Space complexity - ?
   def get_at_index(index)
+
   end
 end
-
-# @list = LinkedList.new
-# @list.add_first(3)
-# @list.add_first(2)
-# p @list
