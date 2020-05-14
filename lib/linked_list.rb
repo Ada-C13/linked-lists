@@ -59,17 +59,6 @@ class LinkedList
     end
   end  
   
-  # Time complexity  - O(n)
-  # Space complexity - O(1)
-  def get_last_node
-    return nil if @head.nil?
-    current = @head
-    while !current.next.nil?
-      current = current.next
-    end
-    return current
-  end
-
   # Time complexity  - O(n) worst case
   # Space complexity - O(1)
   def get_at_index(index)
@@ -84,5 +73,18 @@ class LinkedList
     else
       return current.data
     end
+  end
+
+  private 
+
+  # Time complexity  - O(n)
+  # Space complexity - O(1)
+  def get_last_node
+    return nil if @head.nil?
+    current = @head
+    while !current.next.nil?
+      current = current.next
+    end
+    return current
   end
 end
