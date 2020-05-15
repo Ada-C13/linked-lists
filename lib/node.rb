@@ -4,7 +4,7 @@ class Node
   attr_accessor :next
 
   def initialize(value, nextNode = nil)
-    @data = value
-    @next = nextNode
+    @data = value # the data that is passed in
+    @next = nextNode # a reference to the next object
   end
 end
